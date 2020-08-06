@@ -1,0 +1,18 @@
+<div class="login-container">
+    <h1>Login</h1>
+    <form action="/login" method="POST">
+        <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+        <div class="textbox">
+            <label for="email"><i class="fas fa-user"></i></label>
+            <input type="text" placeholder="Username" name="email">
+        </div>
+
+        <div class="textbox">
+            <label for="password"><i class="fas fa-lock"></i></label>
+            <input type="password" placeholder="Password" name="password">
+        </div>
+
+        <input type="submit" class="btn" value="Sign in">
+
+    </form>
+</div>

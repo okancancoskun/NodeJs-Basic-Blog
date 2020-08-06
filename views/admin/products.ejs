@@ -1,0 +1,45 @@
+
+<div>
+    <% if (action !== "undefined" && action === "edit") { %>
+    <div class="alert alert-success">The product has been updated</div>
+    <% } %>
+    <% if (action !== "undefined" && action === "delete") { %>
+        <div class="alert alert-success">The product has been removed</div>
+        <% } %>
+    <% if(products.length>0){ %>
+    <table>
+        <thead>
+            <tr>
+                <th style="width: 100px;">Image</th>
+                <th>
+                    Name
+                </th>
+                <th style="width: 133px;"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <% products.forEach(product => { %>
+            <tr>
+                <td>
+                    <img src="/img/<%= product.imageUrl %>" style="width: 100px; height: 100px;" alt="">
+                </td>
+                <td>
+                    <%= product.name %>
+                </td>
+                <td>
+                    <a href="/admin/edit-product/<%= product.id %> ">Edit</a>
+                    <form action="/admin/delete-product" method="POST">
+                        <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                        <input type="hidden" name="productid" value="<%= product._id %>">
+                        <button type="submit">DELETE</button>
+                    </form>
+                </td>
+            </tr>
+            <% }) %>
+        </tbody>
+    </table>
+    <% } else{ %>
+
+    <h1>NO PRODUCT</h1>
+    <% } %>
+</div>

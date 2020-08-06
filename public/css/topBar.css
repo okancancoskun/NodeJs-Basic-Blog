@@ -1,0 +1,92 @@
+body{
+    margin: 0;
+    background-color: rgb(2, 2, 2);
+    font-family: 'Bevan';
+    background-image: repeating-linear-gradient(#333,#111);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    
+}
+*{
+    box-sizing: border-box;
+}
+html{
+    height: 100%;
+    overflow: auto;
+}
+.topContainer{
+    padding: 20px;
+    max-width: 100%;
+    display: flex;
+    background-color: rgb(25, 23, 23);
+}
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    flex-wrap: wrap;
+    flex: 50%;
+
+}
+.nav-ul{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    list-style-type: none;
+}
+.notactive{
+    display: inline-block;
+    color: rgba(255, 255, 255, 0.7);
+    padding: 10px 20px;
+    text-decoration: none;
+}
+.active{
+        display: inline-block;
+        color: #03DAC6;
+        padding: 10px 20px;
+        text-decoration: none;
+}
+
+.hamburger{
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+    color: white;
+    font-size: 20px;
+    display: none;
+}
+.hamburger:focus{
+    outline: none;
+}
+.logodiv{
+    display: flex;
+    flex: 50%;
+}
+.logo > a{
+    font-size: 30px;
+    text-decoration: none;
+    color: black;
+}
+
+
+
+@media screen and (max-width:767px){
+    .nav-ul{
+        display: none;
+        width: 100%;
+        flex-direction: column;
+    }
+    .hamburger{
+        display: block;
+    }
+    .nav-ul.show{
+        display: flex;
+    }
+    .logo>a{
+        font-size: 20px;
+        
+    } 
+}

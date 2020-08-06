@@ -1,0 +1,34 @@
+<header>
+    <div class="topContainer">
+        <nav>
+            <div class="logodiv">
+                <span class="logo"><a href="/">Okan Coskun</a></span>
+            </div>
+
+            <button class="hamburger" id="hamburger">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-ul" id="nav-ul">
+                <li><a href="/skills" class="<%= path === '/skills' ? 'active' : 'notactive' %>">Skills</a></li>
+                <li><a href="/myworks" class="<%= path === '/myworks' ? 'active' : 'notactive' %>">My Works</a></li>
+                <li><a href="/aboutme" class="<%= path === '/aboutme' ? 'active' : 'notactive' %>">About Me</a></li>
+                <% if (isAdmin) { %>
+                <li><a href="/admin/products" class="<%= path === '/admin/products' ? 'active' : 'notactive' %>">Admin
+                        Works</a></li>
+                <li><a href="/admin/add-product"
+                        class="<%= path === '/admin/add-product' ? 'active' : 'notactive' %>">Add Work</a></li>
+
+                <% } %>
+
+                <% if(isAuthenticated){ %>
+                <li><a href="/logout">Logout</a></li>
+                <% } else{ %>
+                <li><a href="/login" class="<%= path === '/login' ? 'active' : 'notactive' %>">Login</a></li>
+                <% } %>
+
+            </ul>
+
+        </nav>
+    </div>
+
+</header>

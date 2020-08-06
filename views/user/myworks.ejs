@@ -1,0 +1,29 @@
+
+<div style="margin: 50px;display: flex;flex-direction: column;justify-content: center; align-items: center;">
+
+    <% if(products.length>0){ %>
+    <% products.forEach(product => { %>
+    <div tabindex="0" class="e-card e-card-horizontal" style="width:700px; height:200px; border-radius: 10px; margin-top: 2%;">
+        <img src="/img/<%= product.imageUrl %> " alt="Sample" style="height: 100%">
+        <div class="e-card-stacked">
+            <div class="e-card-header">
+                <div class="e-card-header-caption">
+                    <div class="e-card-header-title">
+                        <h2><%= product.name %> </h2>
+                    </div>
+                </div>
+            </div>
+            <div class="e-card-content">
+                <p><%= product.description %> </p>
+                <a target="_blank" href="<%= product.linkUrl %>">See the Code Here</a>
+            </div>
+        </div>
+    </div>
+    <% }) %>
+
+    <% } else{ %>
+
+    <h1>NO PRODUCT</h1>
+    <% } %>
+
+</div>
